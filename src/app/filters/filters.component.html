@@ -1,0 +1,63 @@
+<div class="p-5">
+  <form [formGroup]="fg" (ngSubmit)="submit()">
+    <div class="row">
+      <label>Par mot clé</label>
+      <input formControlName="search" type="text" class="form-control mb-2" placeholder="search">
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 pl-0">
+        <label>Par catégorie</label>
+
+        <select formControlName="categoryFilter" class="form-control form-control-sm mb-2">
+          <option value="6">Peinture</option>
+          <option value="9">Photographie</option>
+          <option value="5">Sculpture</option>
+          <option value="23">Dessin</option>
+          <option value="15">Edition</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 pl-0">
+        <label>Par prix </label>
+
+        <select formControlName="priceFilter" class="form-control form-control-sm mb-2">
+          <option value="0-500">0-500</option>
+          <option value="500-1000">500-1000</option>
+          <option value="1000-2500">1000-2500</option>
+          <option value="2500-5000">2500-5000</option>
+          <option value="5000-10000">5000-10000</option>
+          <option value="10000-50000">10000-50000</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 pl-0">
+        <label>Ordre</label>
+
+        <select formControlName="sort" class="form-control form-control-sm mb-2">
+          <option value="1">Alphabétique (A - Z)</option>
+          <option value="2">Alphabétique (Z - A)</option>
+          <option value="3">Prix croissant</option>
+          <option value="4">Prix decroissant</option>
+          <option value="11">Ajoutées récemment</option>
+          <option value="13">Popularité</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 p-0">
+        <label>Nombre d'éléments par page</label>
+
+        <select formControlName="ippFilter" class="form-control form-control-sm mb-2">
+          <option value="60">60</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="btn btn-secondary mr-2">Appliquer les filtres</button>
+      <button class="btn btn-danger" (click)="resetFilters()">Annuler les filters</button>
+    </div>
+  </form>
+</div>
